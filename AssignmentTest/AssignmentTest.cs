@@ -5,19 +5,24 @@ namespace AssignmentTest
     [TestClass]
     public class AssignmentTests
     {
+        /*
+            These test methods are checked using manipulate method, which will call the 
+            open, close, lock and unlock method depending user action
+
+        */
         [TestMethod]
         public void OpenTest()
         {
             //first treasureChest starts in locked state
-            TreasureChest treasureChest = new TreasureChest();
-            //change state to closed 
-            treasureChest.Manipulate(TreasureChest.Action.Unlock);
+            //Creating treasure chest instance with starting state as closed
+            TreasureChest treasureChest = new TreasureChest(TreasureChest.State.Closed);
             Assert.AreEqual(TreasureChest.State.Open, treasureChest.Manipulate(TreasureChest.Action.Open));
         }
 
         [TestMethod]
         public void CloseTest()
         {
+            //this test is checking the closed state
             TreasureChest treasureChest = new TreasureChest();
             treasureChest.Manipulate(TreasureChest.Action.Unlock);
             treasureChest.Manipulate(TreasureChest.Action.Open);
@@ -123,7 +128,6 @@ namespace AssignmentTest
         public void SetParamTest()
         {
             TreasureChest treasureChest = new TreasureChest(TreasureChest.Material.Oak, TreasureChest.LockType.Novice, TreasureChest.LootQuality.Green);
-
             Assert.AreEqual("A Locked chest with the following properties:\nMaterial: Oak\nLock Type: Novice\nLoot Quality: Green", treasureChest.ToString());
         }
     }

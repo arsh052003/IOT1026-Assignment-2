@@ -13,23 +13,35 @@
             _lockType = LockType.Novice;
             _lootQuality = LootQuality.Green;
         }
-
+        //assigning values  to material, locktype and lootQuality based on user input
         public TreasureChest(Material material, LockType lockType, LootQuality lootQuality)
         {
             _material = material;
             _lockType = lockType;
             _lootQuality = lootQuality;
         }
+        //changing the state of TreasureChest based on user input
+        public TreasureChest(State stChange)
+        {
+            _state = stChange;
+
+        }
+
+        //retuning the current of state of Treasure 
         public State GetState()
         {
             return _state;
         }
+
+        //Manipulate method accepts Action Parameter and returns the state of the chest
+        //
         public State? Manipulate(Action action)
         {
+            // switch statement with condition as Action
             switch (action)
             {
+                // We will call the appropriate method Open, close, lock or unlock based on Action
                 case Action.Open:
-
                     Open();
                     break;
 
@@ -45,11 +57,16 @@
                     Unlock();
                     break;
             }
+
+            //Return state of the chest
             return _state;
         }
 
         private void Unlock()
         {
+            // Using if condition to check the state of the chest
+            // if state is locked, then change the state of the chest to closed( Based on state Diagram)
+            // if anything else, then print error message using console.writeLine
             if (_state == State.Locked)
             {
                 _state = State.Closed;
@@ -62,10 +79,13 @@
             {
                 Console.WriteLine("cannot unlock the open chest");
             }
-
         }
+
+        //when chest is locked, then print the error, otherwise change the state of chest to closed.
+        //also check for open chest.
         private void Lock()
         {
+            
             if (_state == State.Locked)
             {
                 Console.WriteLine("The chest is allready locked");
@@ -80,6 +100,8 @@
             }
 
         }
+
+        //This method is used to open the chest based on the current state of chest and guide us accordingly. 
         private void Open()
         {
             if (_state == State.Locked)
@@ -95,6 +117,9 @@
                 Console.WriteLine("Chest already opened");
             }
         }
+
+        //This method is used to closed the chest, if already closed it will print message for closed.
+        //else close the chest if chest is open.
         private void Close()
         {
             if (_state == State.Closed)
