@@ -6,9 +6,9 @@ namespace AssignmentTest
     public class AssignmentTests
     {
         [TestMethod]
-        public void DummyTest()
+        public void OpenTest()
         {
-            Assert.AreNotSame(1, 2);
+            Console.WriteLine("");
         }
     }
 }

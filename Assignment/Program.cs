@@ -4,7 +4,8 @@
     {
         static void Main()
         {
-            System.Console.WriteLine("Hello World");
+            //TreasureChest _chest = new TreasureChest();
+            //Console.WriteLine(_chest.Manipulate(TreasureChest.Action.Open));
         }
     }
 }
