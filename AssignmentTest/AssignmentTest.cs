@@ -45,7 +45,7 @@ namespace AssignmentTest
         [TestMethod]
         public void UnlockTest()
         {
-            //
+            //Testing for unlock action when chest is closed
             TreasureChest treasureChest = new TreasureChest();
             //change the state to closed
             Assert.AreEqual(TreasureChest.State.Closed, treasureChest.Manipulate(TreasureChest.Action.Unlock));
@@ -54,21 +54,27 @@ namespace AssignmentTest
         [TestMethod]
         public void CloseLockedTest()
         {
+            //Testing for  invalid action - when trying to close locked chest
             TreasureChest treasureChest = new TreasureChest();
+            //Should remain locked and we will display message in output
             Assert.AreEqual(TreasureChest.State.Locked, treasureChest.Manipulate(TreasureChest.Action.Close));
         }
 
         [TestMethod]
         public void OpenLockedTest()
         {
+            //Testing for invalid action - when trying to open locked chest
             TreasureChest treasureChest = new TreasureChest();
+            //should remain locked and we will display message in output
             Assert.AreEqual(TreasureChest.State.Locked, treasureChest.Manipulate(TreasureChest.Action.Open));
         }
 
         [TestMethod]
         public void LockLockedTest()
         {
+            //Testing for invalid action - when trying to lock the locked chest
             TreasureChest treasureChest = new TreasureChest();
+            //should remain locked and we will display message in output
             Assert.AreEqual(TreasureChest.State.Locked, treasureChest.Manipulate(TreasureChest.Action.Lock));
 
         }
@@ -76,51 +82,61 @@ namespace AssignmentTest
         [TestMethod]
         public void CloseClosedTest()
         {
+            //Testing for invalid action - when trying to close the closed chest
             TreasureChest treasureChest = new TreasureChest();
             // change the state to closed
             treasureChest.Manipulate(TreasureChest.Action.Unlock);
+            //should remain closed and we will display message in output
             Assert.AreEqual(TreasureChest.State.Closed, treasureChest.Manipulate(TreasureChest.Action.Close));
         }
 
         [TestMethod]
         public void UnlockClosedTest()
         {
+            //Testing for invalid action - when trying to unlock the closed chest
             TreasureChest treasureChest = new TreasureChest();
             // change the state to closed
             treasureChest.Manipulate(TreasureChest.Action.Unlock);
+            //should remain closed and we will display message in output
             Assert.AreEqual(TreasureChest.State.Closed, treasureChest.Manipulate(TreasureChest.Action.Unlock));
         }
 
         [TestMethod]
         public void OpenOpenedTest()
         {
+            //Testing for invalid action - when trying to open the opened chest
             TreasureChest treasureChest = new TreasureChest();
             // change the state to closed
             treasureChest.Manipulate(TreasureChest.Action.Unlock);
             //change the state to opened
             treasureChest.Manipulate(TreasureChest.Action.Open);
+            //should remain opened and we will display message in output
             Assert.AreEqual(TreasureChest.State.Open, treasureChest.Manipulate(TreasureChest.Action.Open));
         }
 
         [TestMethod]
         public void LockOpenTest()
         {
+            //Testing for invalid action - when trying to lock the opened chest
             TreasureChest treasureChest = new TreasureChest();
             // change the state to closed
             treasureChest.Manipulate(TreasureChest.Action.Unlock);
             //change the state to opened
             treasureChest.Manipulate(TreasureChest.Action.Open);
+            //should remain opened and we will display message in output
             Assert.AreEqual(TreasureChest.State.Open, treasureChest.Manipulate(TreasureChest.Action.Lock));
         }
 
         [TestMethod]
         public void UnLockOpenTest()
         {
+            //Testing for invalid action - when trying to unlock the opened chest
             TreasureChest treasureChest = new TreasureChest();
             // change the state to closed
             treasureChest.Manipulate(TreasureChest.Action.Unlock);
             //change the state to opened
             treasureChest.Manipulate(TreasureChest.Action.Open);
+            //should remain opened and we will display message in output
             Assert.AreEqual(TreasureChest.State.Open, treasureChest.Manipulate(TreasureChest.Action.Unlock));
         }
 
