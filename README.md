@@ -24,3 +24,17 @@ Write a description of the project here and don't forget to update the badges.
 [![ci](https://github.com/arsh052003/IOT1026-Assignment-2/actions/workflows/ci.yml/badge.svg)](https://github.com/arsh052003/IOT1026-Assignment-2/actions/workflows/ci.yml)
 [![formatting](https://github.com/arsh052003/IOT1026-Assignment-2/actions/workflows/formatting.yml/badge.svg)](https://github.com/arsh052003/IOT1026-Assignment-2/actions/workflows/formatting.yml)
     [![codecov](https://codecov.io/gh/arsh052003/IOT1026-Assignment-2/branch/main/graph/badge.svg?token=54RHNRLEMB)](https://codecov.io/gh/arsh052003/IOT1026-Assignment-2)
+        
+        
+        
+Project description:
+        
+Execute Manipulate method for changing state of the chest, which will call Open, Lock, Unloock or Close method based on user action.
+The Open, Lock, Unlock and Close methods will change the state to chest only if it is possible according to the state Diagram flow
+![image](https://github.com/arsh052003/IOT1026-Assignment-2/assets/122691385/a19824be-27d6-4032-b510-c7de73959848)
+        
+The tressure chest has three contructors,  
+        1. default constructor will assign defined values to the material, quality and lock type
+        2. second constructor accepts three paramater, which will update the material, quality and lock type to user provided input
+        3. Third constructor acceps one paramater as State, which will change the state of the chest depending on user input when we initialize the class
+        
