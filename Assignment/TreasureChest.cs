@@ -9,8 +9,8 @@
         // Default Constructor
         public TreasureChest()
         {
-            _material = Material.Iron;
-            _lockType = LockType.Expert;
+            _material = Material.Oak;
+            _lockType = LockType.Novice;
             _lootQuality = LootQuality.Green;
         }
 
@@ -24,23 +24,26 @@
         {
             return _state;
         }
-        public State Manipulate(Action action)
+        public State? Manipulate(Action action)
         {
-            if (action == Action.Open)
+            switch (action)
             {
-                Open();
-            }
-            else if (action == Action.Close)
-            {
-                Close();
-            }
-            else if (action == Action.Lock)
-            {
-                Lock();
-            }
-            else
-            {
-                Unlock();
+                case Action.Open:
+
+                    Open();
+                    break;
+
+                case Action.Close:
+                    Close();
+                    break;
+
+                case Action.Lock:
+                    Lock();
+                    break;
+
+                case Action.Unlock:
+                    Unlock();
+                    break;
             }
             return _state;
         }
@@ -89,14 +92,14 @@
             }
             else
             {
-                Console.WriteLine("Chest allready opened");
+                Console.WriteLine("Chest already opened");
             }
         }
         private void Close()
         {
             if (_state == State.Closed)
             {
-                Console.WriteLine("Chest is allready closed");
+                Console.WriteLine("Chest is already closed");
             }
             else if (_state == State.Open)
             {
