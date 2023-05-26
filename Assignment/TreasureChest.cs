@@ -101,7 +101,7 @@
 
         }
 
-        //This method is used to open the chest based on the current state of chest and guide us accordingly. 
+        //This method is used to open the chest based on the current state of chest and guide us accordingly.(unlock the chest or is already open)
         private void Open()
         {
             if (_state == State.Locked)

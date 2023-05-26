@@ -45,6 +45,7 @@ namespace AssignmentTest
         [TestMethod]
         public void UnlockTest()
         {
+            //
             TreasureChest treasureChest = new TreasureChest();
             //change the state to closed
             Assert.AreEqual(TreasureChest.State.Closed, treasureChest.Manipulate(TreasureChest.Action.Unlock));
