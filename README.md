@@ -23,3 +23,4 @@ Write a description of the project here and don't forget to update the badges.
         
 [![ci](https://github.com/arsh052003/IOT1026-Assignment-2/actions/workflows/ci.yml/badge.svg)](https://github.com/arsh052003/IOT1026-Assignment-2/actions/workflows/ci.yml)
 [![formatting](https://github.com/arsh052003/IOT1026-Assignment-2/actions/workflows/formatting.yml/badge.svg)](https://github.com/arsh052003/IOT1026-Assignment-2/actions/workflows/formatting.yml)
+        https://app.codecov.io/gh/arsh052003/IOT1026-Assignment-2/tree/main
