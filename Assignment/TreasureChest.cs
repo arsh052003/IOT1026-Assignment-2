@@ -85,7 +85,7 @@
         //also check for open chest.
         private void Lock()
         {
-            
+
             if (_state == State.Locked)
             {
                 Console.WriteLine("The chest is allready locked");
